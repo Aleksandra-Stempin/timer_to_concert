@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Time to Accantus concert</title>
+  <style>
+	body{
+		background:#F7DAD4;
+		text-align: center;
+		font-weight: bold;
+		}
+	h1{
+		color:#236AB9;
+		font-size:56px;	
+	}
+    p {
+      font-family: Arial, sans-serif;
+      font-size: 20px;
+    }
+	#singing_cats{
+		width:60%;
+		aligin:center;
+		margin:auto;
+	}
+	#timer{
+		color:#FD3A0F;
+		font-size:36px;
+		
+	}
+	
+  </style>
+</head>
+<body>
+  <h1>Time to Accantus concert in Zabrze:</h1>
+  <p id="timer"><time datetime="2024-04-07 18:00:00"></time></p>
+  <div id="singing_cats">
+	<img src="singing_cats.jpg">
+  </div>
+  <script>
+    // Get the timer element
+    var timer = document.getElementById("timer");
+    // Get the time element
+    var time = timer.getElementsByTagName("time")[0];
+    // Get the target date from the datetime attribute
+    var targetDate = new Date(time.getAttribute("datetime"));
+    // Define a function to update the timer
+    function updateTimer() {
+      // Get the current date and time
+      var currentDate = new Date();
+      // Calculate the time difference in milliseconds
+      var diff = targetDate - currentDate;
+      // Convert the time difference to days, hours, minutes, and seconds
+      var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((diff % (1000 * 60)) / 1000);
+      // Display the time difference in the time element
+      time.innerHTML = days + " days, " + hours + " hours, " + minutes + " minutes, and " + seconds + " seconds";
+      // If the time difference is zero or negative, stop the timer and display a message
+      if (diff <= 0) {
+        clearInterval(interval);
+        time.innerHTML = "Waiting for next concert!";
+      }
+    }
+    // Call the updateTimer function once
+    updateTimer();
+    // Set an interval to call the updateTimer function every second
+    var interval = setInterval(updateTimer, 1000);
+  </script>
+</body>
+</html>
+
