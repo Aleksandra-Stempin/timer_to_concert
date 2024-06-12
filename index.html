@@ -39,12 +39,15 @@
 	<img id="singing_cats" src="singing_cats_2.jpg">
   </div>
   <script>
+    // Concert date
+    var concertDate = "2024-09-22 17:00:00";
     // Get the timer element
     var timer = document.getElementById("timer");
     // Get the time element
     var time = timer.getElementsByTagName("time")[0];
     // Get the target date from the datetime attribute
-    var targetDate = new Date(time.getAttribute("datetime"));
+    // var targetDate = new Date(time.getAttribute("datetime"));
+    var targetDate = new Date(concertDate);
     // Define a function to update the timer
     function updateTimer() {
       // Get the current date and time
