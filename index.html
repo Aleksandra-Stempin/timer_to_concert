@@ -80,6 +80,42 @@
     margin: 30px 0;
     font-family: Arial, sans-serif;
 	}
+  /* Kontener ramki */
+.glitter-frame {
+  display: inline-block;
+  padding: 15px; /* Grubość ramki */
+  background-color: #000080; /* Ciemnogranatowy kolor bazy */
+  
+  /* Efekt brokatu - nałożenie szumu/gwiazdek */
+  background-image: 
+    radial-gradient(circle, #fff 10%, transparent 11%),
+    radial-gradient(circle, #fff 10%, transparent 11%);
+  background-size: 10px 10px;
+  background-position: 0 0, 5px 5px;
+  
+  /* Animacja błysku */
+  animation: glitter 2s infinite linear;
+  
+  /* Wykończenie */
+  border: 3px solid #000044; /* Jeszcze ciemniejsza krawędź zewnętrzna */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  margin-top: 20px;
+}
+
+/* Animacja poruszającego się brokatu */
+@keyframes glitter {
+  0% { background-position: 0 0, 5px 5px; opacity: 0.9; }
+  50% { opacity: 1; }
+  100% { background-position: 10px 10px, 15px 15px; opacity: 0.9; }
+}
+
+/* Dostosowanie obrazka wewnątrz ramki */
+#singing_cats {
+  display: block;
+  max-width: 100%; /* Obrazek dopasuje się do ramki */
+  height: auto;
+  border: 1px solid rgba(255,255,255,0.2); /* Delikatna linia styku */
+}
 		
   </style>
 </head>
@@ -87,7 +123,7 @@
   <h1 id="mainHeader">Time to Accantus concert in Kraków:</h1>
   <!-- <h1 class="wordart">Time to Accantus concert in Kraków:</h1> -->
   <div id="timer"><time datetime="2024-09-22 17:00:00"></time></div>
-  <div>
+  <div class="glitter-frame">
 	<img id="singing_cats" src="singing_cats_3.jpg">
   </div>
   <script>
