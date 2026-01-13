@@ -13,6 +13,30 @@
 		text-align: center;
 		font-weight: bold;
 	}
+
+  .wordart {
+  /* Wybieramy klasyczną czcionkę szeryfową, podobną do Times New Roman */
+  font-family: "Times New Roman", serif;
+  font-size: 4rem;
+  font-weight: 900;
+  
+  /* Tworzymy pionowy gradient na tekście */
+  background: linear-gradient(to bottom, #b300ff 0%, #660099 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Efekt cienia 3D (WordArt "Classic") */
+  text-shadow: 
+    2px 2px 0px #d1d1d1, 
+    4px 4px 0px rgba(0, 0, 0, 0.2);
+
+  /* Lekkie pochylenie i rozciągnięcie */
+  display: inline-block;
+  transform: skew(-5deg) scaleY(1.2);
+  
+  margin: 20px 0;
+}
+
 	h1{
 		color:#7811d8;
 		font-size:56px;	
@@ -35,7 +59,8 @@
   </style>
 </head>
 <body>
-  <h1 id="mainHeader">Time to Accantus concert in Kraków:</h1>
+  <!-- <h1 id="mainHeader">Time to Accantus concert in Kraków:</h1> -->
+  <h1 class="wordart">Time to Accantus concert in Kraków:</h1>
   <p id="timer"><time datetime="2024-09-22 17:00:00"></time></p>
   <div>
 	<img id="singing_cats" src="singing_cats_3.jpg">
