@@ -7,17 +7,10 @@
 	
   <style>
 	body{
-
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Środkuje w poziomie */
-  justify-content: flex-start; /* Układa elementy od góry */
-  /* reszta Twoich stylów body... */
-
     background: rgb(38, 146, 47);
     background: linear-gradient(0deg, rgb(38, 146, 47), 50%, rgb(54, 245, 165)100%);
     /*min-height: 100vh;*/
-    min-height: 100vh;
+    miheight: 100vh;
 		text-align: center;
 		font-weight: bold;
 	}
@@ -108,10 +101,6 @@
   border: 3px solid #000044; /* Jeszcze ciemniejsza krawędź zewnętrzna */
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
   margin-top: 20px;
-
-max-height: 70vh; /* Ramka nie przekroczy 70% wysokości okna */
-box-sizing: border-box; /* Ważne: uwzględnia padding w wysokości */
-
 }
 
 /* Animacja poruszającego się brokatu */
@@ -127,9 +116,6 @@ box-sizing: border-box; /* Ważne: uwzględnia padding w wysokości */
   max-width: 100%; /* Obrazek dopasuje się do ramki */
   height: auto;
   border: 1px solid rgba(255,255,255,0.2); /* Delikatna linia styku */
-  height: auto;
-  width: auto;
-  object-fit: contain; /* Zachowuje proporcje obrazka */
 }
 		
   </style>
